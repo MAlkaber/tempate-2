@@ -15,8 +15,6 @@
 
 /* start gloubal rules */
 *{
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
@@ -25,6 +23,10 @@
 html{
   scroll-behavior: smooth;
   caret-color:var(--maincolor);
+}    
+::-moz-selection{
+  color:var(--transperntcolor)  ;
+  background-color: #dfe0e0;
 }    
 ::selection{
   color:var(--transperntcolor)  ;
@@ -52,7 +54,7 @@ a{
   color:var(--transperntcolor)
 }
 
-a:visited, a:hover{
+a:visited ,a:hover{
   color: #19c8fa;
 }
 
@@ -258,7 +260,7 @@ nav .form i{
 /* --start landing   */
 .landing{
   min-height: 100vh;
-  background-image: url(/assets/Imgs/background.jpg);
+  background-image: url(../Imgs/background.jpg);
   background-size: cover;
   position: relative;
 }
@@ -417,7 +419,7 @@ nav .form i{
   padding-bottom:var(--secsion-padding);
   height: 600px;
   position: relative;
-  background-image: url(/assets/Imgs/design.jpg);
+  background-image: url(../Imgs/design.jpg);
   background-size:cover;
   display: flex;
   align-items: center;
@@ -538,7 +540,8 @@ nav .form i{
 }
 .protfolio .imgs-holder .box:hover img{
   transform: rotate(3deg) scale(1.1);
-  filter: opacity(.8);
+  -webkit-filter: opacity(.8);
+          filter: opacity(.8);
 }
 
 .protfolio .imgs-holder .caption{
@@ -647,7 +650,7 @@ nav .form i{
   padding-top: var(--secsion-padding);
   padding-bottom: var(--secsion-padding);
   text-align: center;
-  background-image: url(/assets/Imgs/2.jpg);
+  background-image: url(../Imgs/2.jpg);
   background-size: cover;
   position: relative;  
 }
@@ -846,35 +849,36 @@ nav .form i{
   background-color: var(--maincolor);
   position: relative;
   height: 100%;
+  transition: width 0.3s linear;
 }
 .skills .baby-skills .prog-holder span::before{
-  content: attr(data-progress);
+  content: attr(data-width);
   position: absolute;
-  background-color: black;
+  background-color: var(--maincolor);
   color: white;
+  
   top: -40px;
   right: -15px;
   padding: 4px 2px ;
   border-radius: 5px;
   text-align: center;
-  font-weight: 200;
+  font-weight: bold;
 }
-
 .skills .baby-skills .prog-holder span::after{
   content: '';
   position: absolute;
   border-style:solid;
   border-width: 8px;
-  border-color: black transparent transparent transparent;
+  border-color: var(--maincolor) transparent transparent transparent;
   right: -5px;
   top: -14px;
-} 
+}   
 
 
 .quote{
   padding-top:var(--secsion-padding) ;
   padding-bottom: var(--secsion-padding);
-  background-image: url(/assets/Imgs/Quote.jpg);
+  background-image: url(../Imgs/Quote.jpg);
   background-size: cover;
   position: relative;
   text-align: center;
@@ -1007,7 +1011,7 @@ nav .form i{
 .sub{
   padding-top: var(--secsion-padding);
   padding-bottom: var(--secsion-padding);
-  background-image: url(/assets/Imgs/1.jpg);
+  background-image: url(../Imgs/1.jpg);
   background-size: cover;
   position: relative;
   color: white;
@@ -1074,6 +1078,22 @@ nav .form i{
   outline: none;
 }
 
+.sub form ::-webkit-input-placeholder{
+  color: white;
+}
+
+.sub form ::-moz-placeholder{
+  color: white;
+}
+
+.sub form :-ms-input-placeholder{
+  color: white;
+}
+
+.sub form ::-ms-input-placeholder{
+  color: white;
+}
+
 .sub form ::placeholder{
   color: white;
 }
@@ -1121,11 +1141,28 @@ nav .form i{
   border: 1px solid var(--maincolor);
   margin-bottom: 30px;
   width:100%;
-  text-emphasis-color: var(--maincolor);
+  -webkit-text-emphasis-color: var(--maincolor);
+          text-emphasis-color: var(--maincolor);
 }
 
 .contact .content form .main-input:focus{
   outline: none;
+}
+
+.contact .content form .main-input::-webkit-input-placeholder{
+  color: var(--transperntcolor);
+}
+
+.contact .content form .main-input::-moz-placeholder{
+  color: var(--transperntcolor);
+}
+
+.contact .content form .main-input:-ms-input-placeholder{
+  color: var(--transperntcolor);
+}
+
+.contact .content form .main-input::-ms-input-placeholder{
+  color: var(--transperntcolor);
 }
 
 .contact .content form .main-input::placeholder{
